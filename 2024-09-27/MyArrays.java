@@ -21,7 +21,17 @@ public class MyArrays {
   }
 
   public static   int[] concatArray(int[] ary1, int[] ary2) {
-
+    int[] concat = new int[ary1.length + ary2.length];
+    int index = 0;
+    for (int x = 0; x < (ary1.length + ary2.length) - 2; x++) {
+      if (x >= ary1.length) {
+        concat[x] = ary2[index];
+        index++;
+      }
+      else {
+        concat[x] = ary1[x];
+      }
+    }
   }
 
   public static void main (String[] args) {
