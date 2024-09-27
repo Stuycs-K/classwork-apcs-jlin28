@@ -35,6 +35,18 @@ public class MyArrays {
   }
 
   public static void main (String[] args) {
-
+    // Test cases for returnCopy
+    int[] a = {};
+    boolean compare = aryToString(returnCopy(a)).equals(aryToString(a))
+    System.out.println("Is " + aryToString(returnCopy(a)) + " the same as " + aryToString(a) + ": " + compare);
+    int[] a = {4,4,4,4,4};
+    boolean compare = aryToString(returnCopy(a)).equals(aryToString(a))
+    System.out.println("Is " + aryToString(returnCopy(a)) + " the same as " + aryToString(a) + ": " + compare);
+    int[] a = {4, 0, 2, 1};
+    boolean compare = aryToString(returnCopy(a)).equals(aryToString(a))
+    System.out.println("Is " + aryToString(returnCopy(a)) + " the same as " + aryToString(a) + ": " + compare);
+    int[] a = {100000000, 284, 2779};
+    boolean compare = aryToString(returnCopy(a)).equals(aryToString(a))
+    System.out.println("Is " + aryToString(returnCopy(a)) + " the same as " + aryToString(a) + ": " + compare);
   }
 }
