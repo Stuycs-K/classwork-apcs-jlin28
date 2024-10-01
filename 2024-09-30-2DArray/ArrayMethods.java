@@ -77,7 +77,7 @@ public class ArrayMethods{
    //-All other negatives replace with 0
    public static void replaceNegative(int[][] vals){
      for (int row = 0; row < vals.length; row++) {
-       for (int col = 0; col < vals[x].length; col++) {
+       for (int col = 0; col < vals[row].length; col++) {
          if (row == col && vals[row][col] < 0) {
            vals[row][col] = 1;
          }
@@ -94,9 +94,21 @@ public class ArrayMethods{
    //You SHOULD write a helper method for this.
    //If you don't see a good way to do that, you should stop and look at prior methods.
    public static int[][] copy(int[][] nums){
-     return null;//placeholder so it compiles
+     int[][] copy = new int[nums.length][];
+     for (int x = 0; x < nums.length; x++) {
+       copy[x] = copyHelper(nums[x]);
+     }
+     return copy;
    }
-   
+
+   public static int[] copyHelper(int[] nums) {
+     int[] copy = new int[nums.length];
+     for (int x = 0; x < nums.length; x++) {
+       copy[x] = nums[x];
+     }
+     return copy;
+   }
+
   public static void main(String[] args){
         // Test Cases for arrToString
     int[][] a = {{},{}};
@@ -161,6 +173,52 @@ public class ArrayMethods{
     System.out.println(arrToString(a) + " = " + arrToString(swapRC(a)));
     a = new int[][]{{1},{1},{1}};
     System.out.println(arrToString(a) + " = " + arrToString(swapRC(a)));
+
+        // Test Cases for replaceNegative
+    System.out.println(" ");
+    a = new int[][]{{},{},{}};
+    int[][] b = copy(a);
+    replaceNegative(b);
+    String expected = arrToString(new int[][]{{}, {}, {}});
+    System.out.println(arrToString(a) + " = " + arrToString(b) + ", are negatives changed: " + arrToString(b).equals(expected));
+    a = new int[][]{{-1,-1}, {-1, -1, -1}};
+    b = copy(a);
+    replaceNegative(b);
+    expected = arrToString(new int[][]{{1,0}, {0,1,0}});
+    System.out.println(arrToString(a) + " = " + arrToString(b) + ", are negatives changed: " + arrToString(b).equals(expected));
+    a = new int[][]{{}, {}, {-1}};
+    b = copy(a);
+    replaceNegative(b);
+    expected = arrToString(new int[][]{{}, {}, {0}});
+    System.out.println(arrToString(a) + " = " + arrToString(b) + ", are negatives changed: " + arrToString(b).equals(expected));
+    a = new int[][]{{3, -1},{-1},{1}};
+    b = copy(a);
+    replaceNegative(b);
+    expected = arrToString(new int[][]{{3, 0}, {0}, {1}});
+    System.out.println(arrToString(a) + " = " + arrToString(b) + ", are negatives changed: " + arrToString(b).equals(expected));
+
+        //Test Cases for copy
+    System.out.println(" ");
+    a = new int[][]{{1},{2,2},{3,3,3}};
+    b = copy(a);
+    System.out.println(arrToString(a) + " = " +arrToString(b) + ": " + arrToString(a).equals(arrToString(b)));
+    System.out.println("Do they have the same address: " + (a == b));
+    a = new int[][]{{},{},{}};
+    b = copy(a);
+    System.out.println(arrToString(a) + " = " +arrToString(b) + ": " + arrToString(a).equals(arrToString(b)));
+    System.out.println("Do they have the same address: " + (a == b));
+    a = new int[][]{{},{2,2,2,2},{234,235,235,235}};
+    b = copy(a);
+    System.out.println(arrToString(a) + " = " +arrToString(b) + ": " + arrToString(a).equals(arrToString(b)));
+    System.out.println("Do they have the same address: " + (a == b));
+    a = new int[][]{{1,1,1,1},{},{234,235}};
+    b = copy(a);
+    System.out.println(arrToString(a) + " = " +arrToString(b) + ": " + arrToString(a).equals(arrToString(b)));
+    System.out.println("Do they have the same address: " + (a == b));
+    a = new int[][]{{1,1,1,1},{},{}};
+    b = copy(a);
+    System.out.println(arrToString(a) + " = " +arrToString(b) + ": " + arrToString(a).equals(arrToString(b)));
+    System.out.println("Do they have the same address: " + (a == b));
   }
 
 }
