@@ -31,7 +31,7 @@ public class ArrayMethods{
     * You are encouraged to notice that you may want to re-use
     * previous code, but you should NOT duplicate that code. (Don't copy/paste or retype it)
     */
-  public static String arrToString2(int[][]ary){
+  public static String arrToString (int[][]ary){
     String str = "[";
     for (int i = 0; i < ary.length; i++){
       if (i < ary.length - 1){
@@ -71,7 +71,7 @@ public class ArrayMethods{
   }
 
   public static void main(String[] args){
-        // Test Cases for arrToString2
+        // Test Cases for arrToString
     int[][] a = {{},{}};
     for (int i = 0; i < a.length; i++) {
       if (i < a.length - 1) {
@@ -81,7 +81,7 @@ public class ArrayMethods{
         System.out.print(arrToString(a[i]) + " = ");
       }
     }
-    System.out.println(arrToString2(a));
+    System.out.println(arrToString(a));
     a = new int[][]{{},{2},{}};
     for (int i = 0; i < a.length; i++) {
       if (i < a.length - 1) {
@@ -91,7 +91,7 @@ public class ArrayMethods{
         System.out.print(arrToString(a[i]) + " = ");
       }
     }
-    System.out.println(arrToString2(a));
+    System.out.println(arrToString(a));
     a = new int[][]{{3, 45, 5},{2},{}};
     for (int i = 0; i < a.length; i++) {
       if (i < a.length - 1) {
@@ -101,7 +101,7 @@ public class ArrayMethods{
         System.out.print(arrToString(a[i]) + " = ");
       }
     }
-    System.out.println(arrToString2(a));
+    System.out.println(arrToString(a));
     a = new int[][]{{},{2},{234,235,235,235}};
     for (int i = 0; i < a.length; i++) {
       if (i < a.length - 1) {
@@ -111,29 +111,29 @@ public class ArrayMethods{
         System.out.print(arrToString(a[i]) + " = ");
       }
     }
-    System.out.println(arrToString2(a));
-    
+    System.out.println(arrToString(a));
+
         // Test Cases for arr2DSum
     System.out.println(" ");
     a = new int[][]{{},{2},{234,235,235,235}};
-    System.out.println(arrToString2(a) + " = " + arr2DSum(a));
+    System.out.println(arrToString(a) + " = " + arr2DSum(a));
     a = new int[][]{{},{2},{}};
-    System.out.println(arrToString2(a) + " = " + arr2DSum(a));
+    System.out.println(arrToString(a) + " = " + arr2DSum(a));
     a = new int[][]{{},{},{}};
-    System.out.println(arrToString2(a) + " = " + arr2DSum(a));
+    System.out.println(arrToString(a) + " = " + arr2DSum(a));
     a = new int[][]{{1},{1},{1}};
-    System.out.println(arrToString2(a) + " = " + arr2DSum(a));
+    System.out.println(arrToString(a) + " = " + arr2DSum(a));
 
         // Test Cases for swapRC
     System.out.println(" ");
     a = new int[][]{{1,1,1,1},{2,2,2,2},{234,235,235,235}};
-    System.out.println(arrToString2(a) + " = " + arrToString2(swapRC(a)));
+    System.out.println(arrToString(a) + " = " + arrToString(swapRC(a)));
     a = new int[][]{{342422, 523, 2325}, {1, 1, 1}};
-    System.out.println(arrToString2(a) + " = " + arrToString2(swapRC(a)));
+    System.out.println(arrToString(a) + " = " + arrToString(swapRC(a)));
     a = new int[][]{{23, 24, 4}};
-    System.out.println(arrToString2(a) + " = " + arrToString2(swapRC(a)));
+    System.out.println(arrToString(a) + " = " + arrToString(swapRC(a)));
     a = new int[][]{{1},{1},{1}};
-    System.out.println(arrToString2(a) + " = " + arrToString2(swapRC(a)));
+    System.out.println(arrToString(a) + " = " + arrToString(swapRC(a)));
   }
 
 }
