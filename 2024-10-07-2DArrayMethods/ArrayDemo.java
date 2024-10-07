@@ -35,6 +35,14 @@ public class ArrayDemo{
       }
     }
     System.out.println("Is " + c + " equal to " + arrToString(b) + ": " + c.equals(arrToString(b)));
+
+    // Test Cases countZeros2D
+    b = new int[][] {{0,0,0}, {0}};
+    int expected = 4;
+    System.out.println("Is " + expected + " equal to " + countZeros2D(b) + ": " + (expected == countZeros2D(b)));
+    b = new int[][] {{0}, {0}, {21}};
+    expected = 2;
+    System.out.println("Is " + expected + " equal to " + countZeros2D(b) + ": " + (expected == countZeros2D(b)));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
