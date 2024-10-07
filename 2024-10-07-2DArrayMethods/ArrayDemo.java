@@ -6,17 +6,46 @@ public class ArrayDemo{
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
 
+    // Test Cases arrToString (non-2D)
+    int [] a = new int[]{3254, 235, 235};
+    System.out.println("Is " + Arrays.toString(a) + " equal to " + arrToString(a) + ": " + Arrays.toString(a).equals(arrToString(a)));
+    a = new int[]{3, 432, 5322};
+    System.out.println("Is " + Arrays.toString(a) + " equal to " + arrToString(a) + ": " + Arrays.toString(a).equals(arrToString(a)));
+
+    // Test Cases arrToString (2D)
+    int[][] b = new int[][]{{2131,413}, {2345}, {23455,235,0}};
+    String c = "[";
+    for (int x = 0; x < b.length; x++) {
+      if (x != b.length - 1) {
+        c += Arrays.toString(b[x]) + ", ";
+      }
+      else {
+        c += Arrays.toString(b[x]) + "]";
+      }
+    }
+    System.out.println("Is " + c + " equal to " + arrToString(b) + ": " + c.equals(arrToString(b)));
+    b = new int[][] {{324}, {235}, {3}, {235}};
+    c = "[";
+    for (int x = 0; x < b.length; x++) {
+      if (x != b.length - 1) {
+        c += Arrays.toString(b[x]) + ", ";
+      }
+      else {
+        c += Arrays.toString(b[x]) + "]";
+      }
+    }
+    System.out.println("Is " + c + " equal to " + arrToString(b) + ": " + c.equals(arrToString(b)));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
   public static String arrToString(int[]ary){
     String str = "[";
-    for (int i = 0; i < nums.length; i++){
-      if (i < nums.length - 1){
-        str += nums[i] + ", ";
+    for (int i = 0; i < ary.length; i++){
+      if (i < ary.length - 1){
+        str += ary[i] + ", ";
       }
       else
-      str += nums[i];
+      str += ary[i];
     }
     str += "]";
     return str;
