@@ -57,6 +57,24 @@ public class ArrayDemo{
     b = new int[][]{{2}};
     expected = 2;
     System.out.println("Is " + expected + " equal to " + arr2DSum(b) + ": " + (expected == arr2DSum(b)));
+
+    // Test Cases replaceNegative
+    System.out.println(" ");
+    b = new int[][]{{-1,-1}, {-1, -1, -1}};
+    int[][] d = copy(b);
+    replaceNegative(d);
+    String expected2 = arrToString(new int[][]{{1,0}, {0,1,0}});
+    System.out.println(arrToString(b) + " = " + arrToString(d) + ", are negatives changed: " + arrToString(d).equals(expected2));
+    b = new int[][]{{-1}, {-1}};
+    d = copy(b);
+    replaceNegative(d);
+    expected2 = arrToString(new int[][]{{1}, {0}});
+    System.out.println(arrToString(b) + " = " + arrToString(d) + ", are negatives changed: " + arrToString(d).equals(expected2));
+    b = new int[][]{{0}, {-1, 0}};
+    d = copy(b);
+    replaceNegative(d);
+    expected2 = arrToString(new int[][]{{0}, {0, 0}});
+    System.out.println(arrToString(b) + " = " + arrToString(d) + ", are negatives changed: " + arrToString(d).equals(expected2));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
