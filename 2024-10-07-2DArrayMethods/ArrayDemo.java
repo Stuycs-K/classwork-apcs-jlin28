@@ -93,14 +93,25 @@ public class ArrayDemo{
 
     // Test Cases swapRC
     System.out.println(" ");
-    b = new int[][]{{1,1,1,1},{2,2,2,2},{234,235,235,235}};
+    b = new int[][]{{1,1,1,1},{7,4,4,3},{234,235,235, 324}};
     System.out.println(arrToString(b) + " = " + arrToString(swapRC(b)));
-    b = new int[][]{{342422, 523, 2325}, {1, 1, 1}};
+    b = new int[][]{{342422}};
     System.out.println(arrToString(b) + " = " + arrToString(swapRC(b)));
     b = new int[][]{{23, 24, 4}};
     System.out.println(arrToString(b) + " = " + arrToString(swapRC(b)));
-    b = new int[][]{{1},{1},{1}};
+    b = new int[][]{{0},{0}};
     System.out.println(arrToString(b) + " = " + arrToString(swapRC(b)));
+
+    // Test Cases htmlTable
+    System.out.println(" ");
+    b = new int[][]{{1,1},{2},{234,235}};
+    System.out.println(arrToString(b) + " = " + htmlTable(b));
+    b = new int[][]{{342422, 523, 2325}, {1, 1, 1}};
+    System.out.println(arrToString(b) + " = " + htmlTable(b));
+    b = new int[][]{{23, 24, 4}};
+    System.out.println(arrToString(b) + " = " + htmlTable(b));
+    b = new int[][]{{1},{1},{1}};
+    System.out.println(arrToString(b) + " = " + htmlTable(b));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -220,15 +231,11 @@ public class ArrayDemo{
   public static String htmlTable(int[][]nums){
     String table = "<table>";
     for (int row = 0; row < nums.length; row++) {
-      if (row == 0) {
-        table += "<tr>";
-      }
+      table += "<tr>";
       for (int col = 0; col < nums[row].length; col++) {
         table += "<td>" + nums[row][col] + "</td>";
       }
-      if (row == nums.length - 1) {
-        table += "</tr>";
-      }
+      table += "</tr>";
     }
     return table + "</table>";
   }
