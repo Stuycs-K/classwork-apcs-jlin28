@@ -90,6 +90,17 @@ public class ArrayDemo{
     d = copy(b);
     System.out.println(arrToString(b) + " = " + arrToString(d) + ": " + arrToString(b).equals(arrToString(d)));
     System.out.println("Do they have the same address: " + (b == d));
+
+    // Test Cases swapRC
+    System.out.println(" ");
+    b = new int[][]{{1,1,1,1},{2,2,2,2},{234,235,235,235}};
+    System.out.println(arrToString(b) + " = " + arrToString(swapRC(b)));
+    b = new int[][]{{342422, 523, 2325}, {1, 1, 1}};
+    System.out.println(arrToString(b) + " = " + arrToString(swapRC(b)));
+    b = new int[][]{{23, 24, 4}};
+    System.out.println(arrToString(b) + " = " + arrToString(swapRC(b)));
+    b = new int[][]{{1},{1},{1}};
+    System.out.println(arrToString(b) + " = " + arrToString(swapRC(b)));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
