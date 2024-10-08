@@ -75,6 +75,21 @@ public class ArrayDemo{
     replaceNegative(d);
     expected2 = arrToString(new int[][]{{0}, {0, 0}});
     System.out.println(arrToString(b) + " = " + arrToString(d) + ", are negatives changed: " + arrToString(d).equals(expected2));
+
+    // Test Cases copy
+    System.out.println(" ");
+    b = new int[][]{{1},{2,2},{3,3,3}};
+    d = copy(b);
+    System.out.println(arrToString(b) + " = " + arrToString(d) + ": " + arrToString(b).equals(arrToString(d)));
+    System.out.println("Do they have the same address: " + (b == d));
+    b = new int[][]{{0},{2},{0}};
+    d = copy(b);
+    System.out.println(arrToString(b) + " = " + arrToString(d) + ": " + arrToString(b).equals(arrToString(d)));
+    System.out.println("Do they have the same address: " + (b == d));
+    b = new int[][]{{1}};
+    d = copy(b);
+    System.out.println(arrToString(b) + " = " + arrToString(d) + ": " + arrToString(b).equals(arrToString(d)));
+    System.out.println("Do they have the same address: " + (b == d));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
