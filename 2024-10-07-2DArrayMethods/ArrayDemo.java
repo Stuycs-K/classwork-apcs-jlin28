@@ -13,6 +13,7 @@ public class ArrayDemo{
     System.out.println("Is " + Arrays.toString(a) + " equal to " + arrToString(a) + ": " + Arrays.toString(a).equals(arrToString(a)));
 
     // Test Cases arrToString (2D)
+    System.out.println(" ");
     int[][] b = new int[][]{{2131,413}, {2345}, {23455,235,0}};
     String c = "[";
     for (int x = 0; x < b.length; x++) {
@@ -37,12 +38,25 @@ public class ArrayDemo{
     System.out.println("Is " + c + " equal to " + arrToString(b) + ": " + c.equals(arrToString(b)));
 
     // Test Cases countZeros2D
+    System.out.println(" ");
     b = new int[][] {{0,0,0}, {0}};
     int expected = 4;
     System.out.println("Is " + expected + " equal to " + countZeros2D(b) + ": " + (expected == countZeros2D(b)));
     b = new int[][] {{0}, {0}, {21}};
     expected = 2;
     System.out.println("Is " + expected + " equal to " + countZeros2D(b) + ": " + (expected == countZeros2D(b)));
+
+    // Test Cases arr2DSum
+    System.out.println(" ");
+    b = new int[][]{{2},{20},{0}};
+    expected = 22;
+    System.out.println("Is " + expected + " equal to " + arr2DSum(b) + ": " + (expected == arr2DSum(b)));
+    b = new int[][]{{2},{22, 34},{2, 528, 582}};
+    expected = 1170;
+    System.out.println("Is " + expected + " equal to " + arr2DSum(b) + ": " + (expected == arr2DSum(b)));
+    b = new int[][]{{2}};
+    expected = 2;
+    System.out.println("Is " + expected + " equal to " + arr2DSum(b) + ": " + (expected == arr2DSum(b)));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
