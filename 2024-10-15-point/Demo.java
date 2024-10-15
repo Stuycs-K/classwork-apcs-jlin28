@@ -19,5 +19,11 @@ public class Demo{
     System.out.println( distance(p1,p2));
     System.out.println( Point.distance(p1,p2));
     System.out.println( p1.distanceTo(p2));
+    //start of equilateral triangle
+    Point a = new Point(0,0);
+    Point b = new Point(0,1);
+    int triangley = Math.sqrt()
+    Point c = new Point(Math.sqrt(3/4), 3/4);
+    System.print
   }
 }
