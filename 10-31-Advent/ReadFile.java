@@ -11,19 +11,15 @@ public class ReadFile {
       File file = new File("ReadFile.java");//1
       Scanner input = new Scanner(file);
       //CODE THAT SCANS THE FILE.
-      int count = 0;
       while (input.hasNextLine()) {
         String output = input.nextLine();
-        if (count % 2 == 0) {
-          if (output.length() > 0) {
+        if (output.contains("\\{")) {
             System.out.println(output);
           }
           else {
             System.out.println(input.nextLine());
           }
         }
-        count++;
-      }
       input.close();//releases the file from your program
 
     } catch (FileNotFoundException ex) {
