@@ -4,40 +4,38 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class TriangleTester {
+  public static boolean isTriangle (int one, int two, int three) {
+    return (one + two > three && two + three > one && one + three > two);
+  }
+
   public static int countTrianglesA(String filename) {
     int count = 0;
-    ArrayList<ArrayList<String>> triangles = new ArrayList<ArrayList<String>>(filename.length()/2);
-    for (int x = 0; x < filename.length(); x++) {
-      String number = "";
-      int triangle = 0;
-      if (filename.substring(x, x+1).equals(" ")) {
-        triangles.get(triangle).add(number);
-      }
-      else if (filename.substring(x, x+1).equals("\\")) {
-        triangle++;
-        number = "";
-        x++;
-      }
-      else {
-        number += filename.substring(x,x+1);
-      }
-    }
-    System.out.println(triangles);
-    return 0;
-  }
-  public static void main(String[] args) {
     try {
-      File file = new File("inputTri.txt");
+      File file = new File(filename);
       Scanner input = new Scanner(file);
-      String fil = "";
       while (input.hasNextLine()) {
-        fil += input.nextLine() + "\n";
+        String line = input.nextLine();
+        String[] nums = new String[] {"", "", ""};
+        for (int x = 0, i = 0; x < line.length(); x++) {
+          if (line.substring(x, x+1).equals(" ")) {
+            i++;
+          }
+          else {
+            nums[i] += line.substring(x,x+1);
+          }
+        }
+        if (isTriangle(Integer.parseInt(nums[0]), Integer.parseInt(nums[1]), Integer.parseInt(nums[2]))) {
+          count++;
+        }
       }
       input.close();
-      countTrianglesA(fil);
     }catch (FileNotFoundException ex) {
       System.out.println("File not found");
-      return;
     }
+    return count;
+  }
+  
+  public static void main(String[] args) {
+    System.out.println(countTrianglesA("inputTri.txt"));
   }
 }
