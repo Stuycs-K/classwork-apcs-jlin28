@@ -13,11 +13,8 @@ public class ReadFile {
       //CODE THAT SCANS THE FILE.
       while (input.hasNextLine()) {
         String output = input.nextLine();
-        if (output.contains("\\{")) {
+        if (output.contains("{")) {
             System.out.println(output);
-          }
-          else {
-            System.out.println(input.nextLine());
           }
         }
       input.close();//releases the file from your program
