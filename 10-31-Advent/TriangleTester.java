@@ -1,7 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class TriangleTester {
   public static boolean isTriangle (int one, int two, int three) {
@@ -13,19 +12,18 @@ public class TriangleTester {
     try {
       File file = new File(filename);
       Scanner input = new Scanner(file);
-      while (input.hasNextLine()) {
-        String line = input.nextLine();
-        String[] nums = new String[] {"", "", ""};
-        for (int x = 0, i = 0; x < line.length(); x++) {
-          if (line.substring(x, x+1).equals(" ")) {
-            i++;
+      int[] nums = new int[3];
+      int x = 0;
+      while (input.hasNextInt() || x == 3) {
+        if (x == 3) {
+          if (isTriangle(nums[0], nums[1], nums[2])) {
+            count++;
           }
-          else {
-            nums[i] += line.substring(x,x+1);
-          }
+          x = 0;
         }
-        if (isTriangle(Integer.parseInt(nums[0]), Integer.parseInt(nums[1]), Integer.parseInt(nums[2]))) {
-          count++;
+        else {
+          nums[x] = input.nextInt();
+          x++;
         }
       }
       input.close();
@@ -34,8 +32,8 @@ public class TriangleTester {
     }
     return count;
   }
-  
+
   public static void main(String[] args) {
-    System.out.println(countTrianglesA("inputTri.txt"));
+    System.out.println(countTrianglesA("inputA.txt"));
   }
 }
