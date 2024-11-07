@@ -41,10 +41,7 @@ public class Bird extends Animal {
   }
 
   //Step 8:In Driver.java answer: What is the difference before and after you override this method?
-  //What does this tell us about methods that are overridden?
-
-  //after you override this method it uses the new method that override the old one
-  
+  //What does this tell us about methods that are overridden?  
 
   //Go back and complete steps 9 onwards.
 
