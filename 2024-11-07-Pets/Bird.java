@@ -28,7 +28,7 @@ public class Bird extends Animal {
   public void speak(){
     super.speak();
     System.out.println("My feathers are colored " + color);
-    System.out.println("I am " + height + "inches tall");
+    System.out.println("I am " + height + " inches tall");
   }
 
 
