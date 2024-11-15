@@ -28,8 +28,8 @@ public class ArrayListPractice {
   public static ArrayList<String> makeReversedList( ArrayList<String> original){
     //return a new ArrayList that is in the reversed order of the original.
     ArrayList<String> newList = new ArrayList<String>(original.size());
-    for (int i = 0; i < original.size(); i++) {
-      newList.add(original.get(original.size()- (i +1)));
+    for (int i = 1; i <= original.size(); i++) {
+      newList.add(original.get(original.size()- i));
     }
     return newList;
   }
@@ -51,11 +51,19 @@ public class ArrayListPractice {
   }
 
   public static void main(String[] args) {
-    ArrayList<String> arylist = createRandomArray(10);
+    ArrayList<String> arylist = createRandomArray(2);
     System.out.println("Original: " + arylist);
+
     replaceEmpty(arylist);
-    System.out.println("After replaceEmpty: " + arylist);
+    System.out.println("\nAfter replaceEmpty: " + arylist);
+
     ArrayList<String> reverse = makeReversedList(arylist);
-    System.out.println("After makeReversedList: " + reverse);
+    System.out.println("\nAfter makeReversedList: " + reverse);
+
+    ArrayList<String> secondary = createRandomArray(4);
+    replaceEmpty(secondary);
+    System.out.println("\n2nd Array to be mixed: " + secondary);
+    ArrayList<String> mixed = mixLists(arylist, secondary);
+    System.out.println("After mixLists: " + mixed);
   }
 }
