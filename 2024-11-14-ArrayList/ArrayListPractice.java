@@ -4,14 +4,15 @@ public class ArrayListPractice {
 
   public static ArrayList<String>createRandomArray(int size) {
     ArrayList<String> randomList = new ArrayList<String>(size);
-    for (int i = 0; i < randomList.size(); i++) {
+    for (int i = 0; i < size; i++) {
       int num = (int)(Math.random()*11);
       if (num == 0) {
         randomList.add("");
       } else {
-        randomList.add(num);
+        randomList.add("" + num);
       }
     }
+    return randomList;
   }
 
   public static void replaceEmpty( ArrayList<String> original){
@@ -27,8 +28,8 @@ public class ArrayListPractice {
   public static ArrayList<String> makeReversedList( ArrayList<String> original){
     //return a new ArrayList that is in the reversed order of the original.
     ArrayList<String> newList = new ArrayList<String>(original.size());
-    for (int i = 0; i < newList.size(); i++) {
-      newList.set(i, original.get(original.size()- (i +1)));
+    for (int i = 0; i < original.size(); i++) {
+      newList.add(original.get(original.size()- (i +1)));
     }
     return newList;
   }
@@ -49,4 +50,12 @@ public class ArrayListPractice {
     return newList;
   }
 
+  public static void main(String[] args) {
+    ArrayList<String> arylist = createRandomArray(10);
+    System.out.println("Original: " + arylist);
+    replaceEmpty(arylist);
+    System.out.println("After replaceEmpty: " + arylist);
+    ArrayList<String> reverse = makeReversedList(arylist);
+    System.out.println("After makeReversedList: " + reverse);
+  }
 }
