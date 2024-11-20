@@ -82,15 +82,20 @@ public class Day2 {
       for (int i = 0; i < lines.get(x).length(); i++) {
         char temp = lines.get(x).charAt(i);
         if (temp == 'U' || temp == 'D') {
-          if (lastpos + pos(temp) > 0 && lastpos + pos(temp) < 14 && lastpos != 5 && lastpos != 9) {
-            lastpos = lastpos + pos(temp);
+          if (lastpos != 5 && lastpos != 9) {
+            if (lastpos + pos2(temp) > 0 && lastpos + pos2(temp) < 14) {
+              lastpos = lastpos + pos2(temp);
+            }
+            else if (lastpos == 3 || lastpos == 11) {
+              lastpos = lastpos + pos2(temp)/2;
+            }
           }
         }
         else if (lastpos != 1 && lastpos != 2 && lastpos != 5 && lastpos != 10 && lastpos != 13 && temp == 'L') {
-          lastpos = lastpos + pos(temp);
+          lastpos = lastpos + pos2(temp);
         }
         else if (lastpos != 1 && lastpos != 4 && lastpos != 9 && lastpos != 12 && lastpos != 13 && temp == 'R') {
-          lastpos = lastpos + pos(temp);
+          lastpos = lastpos + pos2(temp);
         }
       }
       pass = pass + keys[lastpos-1];
