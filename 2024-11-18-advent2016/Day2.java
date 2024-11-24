@@ -84,7 +84,12 @@ public class Day2 {
         if (temp == 'U' || temp == 'D') {
           if (lastpos != 5 && lastpos != 9) {
             if (lastpos + pos2(temp) > 0 && lastpos + pos2(temp) < 14) {
-              lastpos = lastpos + pos2(temp);
+              if (lastpos != 1 && lastpos != 13) {
+                lastpos = lastpos + pos2(temp);
+              }
+              else {
+                lastpos = lastpos + pos2(temp)/2;
+              }
             }
             else if (lastpos == 3 || lastpos == 11) {
               lastpos = lastpos + pos2(temp)/2;
