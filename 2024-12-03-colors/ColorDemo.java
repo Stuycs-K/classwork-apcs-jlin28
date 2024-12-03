@@ -10,8 +10,11 @@ public class ColorDemo {
   public static void color(int fg, int bg, int modifier) {
     System.out.println("\u001b[" + fg + ";" + bg + ";" + modifier + "m");
   }
-  
+
   public static void main(String[] args) {
-    System.out.print()
+    go(20, 20);
+    color()
+    // resetting terminal to defaults
+    System.out.print("\u001b[0m");
   }
 }
