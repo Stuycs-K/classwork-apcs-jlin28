@@ -4,7 +4,9 @@ import java.io.FileNotFoundException;
 
 public class Day1 {
   public static int tester (String filename) {
-    int dir = 0, blocksS = 0, blocksN = 0;
+    int dir = 0;
+    int blocksS = 0;
+    int blocksN = 0;
     try {
       File file = new File(filename);
       Scanner input = new Scanner(file);
