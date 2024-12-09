@@ -1,15 +1,17 @@
 public class Mage extends Adventurer {
   private int maxMP;
   private int mp;
+  private int mpPotion;
 
   public Mage (String name) {
-    super(name);
+    this(name, hp, mp);
   }
 
   public Mage (String name, int hp, int mp) {
     super(name, hp);
     this.mp = mp;
     this.maxMP = mp;
+    mpPotion = 5;
   }
 
   public String getSpecialName() {
@@ -79,6 +81,10 @@ public class Mage extends Adventurer {
       other.setHP(0);
     }
     return getName() + " has dealt 30 damage to " + other.getName() + " with Fireball!";
+  }
+
+  public String useItem() {
+    restoreSpecial(10);
   }
 
 }
