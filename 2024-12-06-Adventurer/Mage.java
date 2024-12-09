@@ -21,7 +21,7 @@ public class Mage extends Adventurer {
   }
 
   public void setSpecial(int n) {
-    if (n > 0 && n < maxMP) {
+    if (n >= 0 && n < maxMP) {
       this.mp = n;
     }
     else {
@@ -40,7 +40,7 @@ public class Mage extends Adventurer {
     else {
       other.setHP(0);
     }
-    return "10 damage dealt with Basic Attack!";
+    return getName() + " has dealt 10 damage to " + other.getName() + " with Basic Attack!";
   }
 
   public String support(Adventurer other) {
@@ -50,7 +50,7 @@ public class Mage extends Adventurer {
     else {
       other.setHP(other.getmaxHP());
     }
-    return other.getName() + "was healed for 10 HP!";
+    return other.getName() + " was healed for 10 HP!";
   }
 
   public String support() {
@@ -62,7 +62,7 @@ public class Mage extends Adventurer {
     }
     setmaxHP(getmaxHP() + 5);
     setHP(getHP() + 5);
-    return "Your total health has increased by 5 points!";
+    return getName() + "\'s total health has increased by 5 points!";
   }
 
   public String specialAttack(Adventurer other) {
@@ -78,7 +78,7 @@ public class Mage extends Adventurer {
     else {
       other.setHP(0);
     }
-    return "30 damage dealt with Fireball!";
+    return getName() + " has dealt 30 damage to " + other.getName() + " with Fireball!";
   }
 
 }
