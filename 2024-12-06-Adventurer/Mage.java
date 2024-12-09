@@ -14,6 +14,10 @@ public class Mage extends Adventurer {
     mpPotion = 5;
   }
 
+  public String getItemCount() {
+    return mpPotion;
+  }
+
   public String getSpecialName() {
     return "mp";
   }
