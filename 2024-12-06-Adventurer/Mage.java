@@ -54,42 +54,31 @@ public class Mage extends Adventurer {
   }
 
   public String support() {
-    setmaxHP(getmaxHP() + 5);
-    setHP(getHP() + 5);
-    if (getMP() - 10 > 0) {
-      setMP(getMP() - 10);
+    if (getSpecial() - 10 > 0) {
+      setSpecial(getSpecial() - 10);
     }
     else {
       return "Insufficient MP!";
     }
+    setmaxHP(getmaxHP() + 5);
+    setHP(getHP() + 5);
     return "Your total health has increased by 5 points!";
   }
 
   public String specialAttack(Adventurer other) {
+    if (getSpecial() - 20 > 0) {
+      setSpecial(getSpecial() - 20);
+    }
+    else {
+      return "Insufficient MP!";
+    }
     if (other.getHP() - 30 > 0) {
       other.applyDamage(30);
     }
     else {
       other.setHP(0);
     }
-    if (getMP() - 20 > 0) {
-      setMP(getMP() - 20);
-    }
-    else {
-      return "Insufficient MP!";
-    }
     return "30 damage dealt with Fireball!";
   }
 
-  public int getMP(){
-      return mp;
-  }
-
-  public int getmaxMP(){
-      return maxMP;
-  }
-
-  public void setMP(int mp){
-      this.mp = mp;
-  }
 }
