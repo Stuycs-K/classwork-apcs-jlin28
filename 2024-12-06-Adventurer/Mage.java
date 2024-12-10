@@ -3,7 +3,7 @@ public class Mage extends Adventurer {
   private int mp;
 
   public Mage (String name) {
-    super(name);
+    this(name, 10, 10);
   }
 
   public Mage (String name, int hp, int mp) {
@@ -34,13 +34,13 @@ public class Mage extends Adventurer {
   }
 
   public String attack(Adventurer other) {
-    if (other.getHP() - 10 > 0) {
-      other.applyDamage(10);
+    if (other.getHP() - 2 > 0) {
+      other.applyDamage(2);
     }
     else {
       other.setHP(0);
     }
-    return getName() + " has dealt 10 damage to " + other.getName() + " with Basic Attack!";
+    return getName() + " has dealt 2 damage to " + other.getName() + " with Basic Attack!";
   }
 
   public String support(Adventurer other) {
@@ -54,31 +54,31 @@ public class Mage extends Adventurer {
   }
 
   public String support() {
-    if (getSpecial() - 10 > 0) {
-      setSpecial(getSpecial() - 10);
+    if (getSpecial() - 2 > 0) {
+      setSpecial(getSpecial() - 2);
     }
     else {
       return "Insufficient MP!";
     }
-    setmaxHP(getmaxHP() + 5);
-    setHP(getHP() + 5);
-    return getName() + "\'s total health has increased by 5 points!";
+    setmaxHP(getmaxHP() + 2);
+    setHP(getHP() + 2);
+    return getName() + "\'s total health has increased by 2 points!";
   }
 
   public String specialAttack(Adventurer other) {
-    if (getSpecial() - 20 > 0) {
-      setSpecial(getSpecial() - 20);
+    if (getSpecial() - 4 > 0) {
+      setSpecial(getSpecial() - 4);
     }
     else {
-      return "Insufficient MP!";
+      return "Insufficient MP! Basic Attack has been used instead: " + attack(other);
     }
-    if (other.getHP() - 30 > 0) {
-      other.applyDamage(30);
+    if (other.getHP() - 4 > 0) {
+      other.applyDamage(4);
     }
     else {
       other.setHP(0);
     }
-    return getName() + " has dealt 30 damage to " + other.getName() + " with Fireball!";
+    return getName() + " has dealt 4 damage to " + other.getName() + " with Fireball!";
   }
 
 }
